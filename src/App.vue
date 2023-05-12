@@ -188,7 +188,9 @@ export default {
             }
 
             if (this.textures[this.selected_texture] !== null) {
+                const currentTime = performance.now(); // get current time
                 this.materials[this.filter].setTexture('image', this.textures[this.selected_texture]);
+                this.materials[this.filter].setFloat('time', currentTime);
             }
         });
 
